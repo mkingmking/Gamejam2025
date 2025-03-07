@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg8ka2jgsca7c"]
+
+[ext_resource type="Script" uid="uid://chga0qpb8jpve" path="res://sprite_2d.gd" id="1_b0ifj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="CharacterBody2D" parent="."]
+position = Vector2(464, 216)
+scale = Vector2(1.28516, 1.21484)
+script = ExtResource("1_b0ifj")

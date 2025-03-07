@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceqd5ku63knda"]
+
+[ext_resource type="Script" uid="uid://chga0qpb8jpve" path="res://sprite_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://cokcmg4mgaj5" path="res://assets/sprites/obj_bomb1_007.png" id="2_epypp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
+radius = 82.1523
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
+radius = 83.006
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(-125, -79)
+script = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(327, 211)
+texture = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Sprite2D"]
+position = Vector2(408, 100)
+shape = SubResource("CircleShape2D_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(805, 180)
+shape = SubResource("CircleShape2D_0hol4")
