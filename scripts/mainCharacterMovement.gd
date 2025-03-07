@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@onready var anim = $AnimatedSprite2D  # Reference to the AnimatedSprite2D
+@onready var anim = $mainChar # Reference to the AnimatedSprite2D
 
 @export var speed: float = 200  # Movement speed
 

@@ -1,5 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ceqd5ku63knda"]
+[gd_scene load_steps=24 format=3 uid="uid://ceqd5ku63knda"]
 
+[ext_resource type="Script" uid="uid://drervbub2kqpk" path="res://enemy_spawner.gd" id="3_04qyp"]
+[ext_resource type="PackedScene" uid="uid://b8pa7wwk4plcc" path="res://scenes/enemy.tscn" id="3_4vge2"]
 [ext_resource type="Texture2D" uid="uid://dv34538eypoou" path="res://assets/backgrounds/character.png" id="3_rnjyy"]
 [ext_resource type="Script" uid="uid://dcm1nkr4fgajy" path="res://scripts/mainCharacterMovement.gd" id="4_4vge2"]
 
@@ -150,19 +152,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dvvg"]
+size = Vector2(1, 1)
+
 [node name="Node2D" type="Node2D"]
 
-[node name="mainChar" type="CharacterBody2D" parent="."]
+[node name="mainChar" type="CharacterBody2D" parent="." groups=["player"]]
 z_index = 1
 position = Vector2(-125, -79)
 script = ExtResource("4_4vge2")
 
 [node name="mainChar" type="AnimatedSprite2D" parent="mainChar"]
-position = Vector2(431, 198)
+position = Vector2(391, 198)
 scale = Vector2(5.75, 3.8125)
 sprite_frames = SubResource("SpriteFrames_hh0fu")
-animation = &"idleMainChar"
+animation = &"walkLeftMainChar"
+frame = 3
+frame_progress = 0.510132
 
-[node name="Enemy" type="CharacterBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainChar"]
+position = Vector2(396, 196)
+shape = SubResource("RectangleShape2D_4dvvg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("3_04qyp")
+enemy_scene = ExtResource("3_4vge2")
