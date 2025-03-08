@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt0ekr58phfri"]
+
+[ext_resource type="Texture2D" uid="uid://dlur0q5dwekbj" path="res://assets/backgrounds/kitchen background.png" id="1_63bqb"]
+[ext_resource type="Script" uid="uid://rcctxo37rkj7" path="res://scripts/kitchen_frigor_oven_sink.gd" id="2_yk5no"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63bqb"]
+size = Vector2(155, 203)
+
+[sub_resource type="Animation" id="Animation_yk5no"]
+resource_name = "firework_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e4uee"]
+_data = {
+&"firework_animation": SubResource("Animation_yk5no")
+}
+
+[node name="Kitchen" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_top = -16.0
+offset_right = 1152.0
+offset_bottom = 723.0
+texture = ExtResource("1_63bqb")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_yk5no")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(234.5, 476.5)
+shape = SubResource("RectangleShape2D_63bqb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_e4uee")
+}
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -163,7 +163,7 @@ position = Vector2(-125, -79)
 script = ExtResource("4_4vge2")
 
 [node name="mainChar" type="AnimatedSprite2D" parent="mainChar"]
-position = Vector2(391, 198)
+position = Vector2(420, 212)
 scale = Vector2(5.75, 3.8125)
 sprite_frames = SubResource("SpriteFrames_hh0fu")
 animation = &"walkLeftMainChar"
@@ -177,3 +177,5 @@ shape = SubResource("RectangleShape2D_4dvvg")
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("3_04qyp")
 enemy_scene = ExtResource("3_4vge2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
