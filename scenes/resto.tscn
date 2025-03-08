@@ -1,77 +1,77 @@
-[gd_scene load_steps=25 format=3 uid="uid://ceqd5ku63knda"]
+[gd_scene load_steps=25 format=3 uid="uid://pd314li5yemx"]
 
-[ext_resource type="Script" uid="uid://drervbub2kqpk" path="res://enemy_spawner.gd" id="3_04qyp"]
-[ext_resource type="PackedScene" uid="uid://b8pa7wwk4plcc" path="res://scenes/enemy.tscn" id="3_4vge2"]
-[ext_resource type="Texture2D" uid="uid://dv34538eypoou" path="res://assets/backgrounds/character.png" id="3_rnjyy"]
-[ext_resource type="Script" uid="uid://dcm1nkr4fgajy" path="res://scripts/mainCharacterMovement.gd" id="4_4vge2"]
-[ext_resource type="Texture2D" uid="uid://y7yida4ug668" path="res://assets/backgrounds/dosya1.webp" id="5_04qyp"]
+[ext_resource type="Script" uid="uid://bhuo2nap7akiu" path="res://scripts/mainCharMovementResto.gd" id="1_4c3qh"]
+[ext_resource type="Texture2D" uid="uid://dv34538eypoou" path="res://assets/backgrounds/character.png" id="2_eq8i8"]
+[ext_resource type="Script" uid="uid://drervbub2kqpk" path="res://enemy_spawner.gd" id="3_apv1r"]
+[ext_resource type="PackedScene" uid="uid://b8pa7wwk4plcc" path="res://scenes/enemy.tscn" id="4_417uq"]
+[ext_resource type="Texture2D" uid="uid://y7yida4ug668" path="res://assets/backgrounds/dosya1.webp" id="5_3fn6y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hh0fu"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3m5ht"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(48, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dubn7"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(32, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08kqv"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(16, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6ptj"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(0, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hsdmi"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(48, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifa78"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(32, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xtx0q"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(16, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kg8w"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(0, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vge2"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(0, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04qyp"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(16, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7wrs"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(32, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fws66"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(48, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x63s8"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(48, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0q20i"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv8l0"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6u5g"]
-atlas = ExtResource("3_rnjyy")
+atlas = ExtResource("2_eq8i8")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hh0fu"]
@@ -158,26 +158,32 @@ size = Vector2(22.25, 30.75)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="mainChar" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="mainCharResto" type="CharacterBody2D" parent="." groups=["player"]]
 z_index = 1
 position = Vector2(755, 846)
-script = ExtResource("4_4vge2")
+script = ExtResource("1_4c3qh")
 
-[node name="mainChar" type="AnimatedSprite2D" parent="mainChar"]
-position = Vector2(420, 212)
+[node name="mainChar" type="AnimatedSprite2D" parent="mainCharResto"]
+z_index = 1
+position = Vector2(-2, 6.10352e-05)
 scale = Vector2(5.75, 3.8125)
 sprite_frames = SubResource("SpriteFrames_hh0fu")
-animation = &"walkLeftMainChar"
-frame = 3
-frame_progress = 0.510132
+animation = &"idleMainChar"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mainChar"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainCharResto"]
 position = Vector2(-8, -7)
 shape = SubResource("RectangleShape2D_4dvvg")
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 position = Vector2(875, 121)
-script = ExtResource("3_04qyp")
-enemy_scene = ExtResource("3_4vge2")
+script = ExtResource("3_apv1r")
+enemy_scene = ExtResource("4_417uq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(524, 513)
+texture = ExtResource("5_3fn6y")

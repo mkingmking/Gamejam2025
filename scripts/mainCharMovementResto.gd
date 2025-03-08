@@ -8,19 +8,21 @@ func _physics_process(delta):
 	var direction = Vector2.ZERO
 
 	# Detect movement input
-	if Input.is_action_pressed("ui_right") :
+	if Input.is_action_pressed("ui_right") and position.x < 1000 :
 		direction.x += 1
-	if Input.is_action_pressed("ui_left") :
+	if Input.is_action_pressed("ui_left") and position.x > 0:
 		direction.x -= 1
-	if Input.is_action_pressed("ui_down") :
+	if Input.is_action_pressed("ui_down") and position.y < 950:
 		direction.y += 1
-	if Input.is_action_pressed("ui_up") :
+	if Input.is_action_pressed("ui_up") and position.y > 750 :
 		direction.y -= 1
 
 	# Apply movement
 	velocity = direction.normalized() * speed
 	move_and_slide()
-
+	
+	position.x = clamp(position.x, 0, 1000)
+	position.y = clamp(position.y, 700, 1050)
 	
 
 	# Play correct animation based on movement direction
